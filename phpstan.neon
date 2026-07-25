@@ -1,0 +1,23 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app
+        - config
+        - routes
+
+    # Level 9 adalah yang paling ketat, Anda bisa mulai dari level 0 atau 5 dulu
+    level: 5
+
+    ignoreErrors:
+        - '#Access to an undefined property#'
+        - '#Method .* should return#'
+        - '#PHPDoc tag @extends contains generic type#'
+        - '#PHPDoc tag @use has invalid type#'
+        - '#Type .* in generic type#'
+        - '#If condition is always#'
+        - '#Right side of && is always#'
+        - '#Call to an undefined method#'
+        - '#Static method Illuminate.*Route::middleware#'
