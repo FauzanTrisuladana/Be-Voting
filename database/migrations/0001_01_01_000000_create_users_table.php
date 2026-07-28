@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->enum('status', ['Aktif', 'Pending', 'Tidak Aktif']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('profile_image')->nullable();
             $table->string('provider')->nullable();

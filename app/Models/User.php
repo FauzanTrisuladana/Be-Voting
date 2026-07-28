@@ -73,4 +73,20 @@ class User extends Authenticatable
             'activated_at' => 'datetime',
         ];
     }
+
+    public function scopeFilter($query, ?string $search = null, ?array $status = null)
+    {
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%$search%")
+                    ->orWhere('email', 'like', "%$search%");
+            });
+        }
+
+        if ($status) {
+            $query->whereIn('status', $status);
+        }
+
+        return $query;
+    }
 }
