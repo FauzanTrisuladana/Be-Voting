@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "message": "Data dashboard berhasil diambil",
+  "data": {
+    "total_A": 5,
+    "total_B": 0,
+    "total_C": 2,
+    "total_D": 0,
+    "total_E": 0
+  }
+}

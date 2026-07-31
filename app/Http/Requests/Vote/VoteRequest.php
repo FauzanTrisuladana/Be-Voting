@@ -22,7 +22,10 @@ class VoteRequest extends FormRequest
      */
     protected function prepareForValidation(): void
     {
-        //
+        $this->merge([
+            'voter_code' => strtoupper($this->input('voter_code')),
+            'vote_choice' => strtoupper($this->input('vote_choice')),
+        ]);
     }
 
     /**

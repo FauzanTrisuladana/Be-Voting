@@ -23,7 +23,7 @@ class VoteController extends Controller
             abort(400, 'Kode sudah digunakan.');
         }
 
-        return new VoterCodeResource($voterCode)->message('Kode valid');
+        return (new VoterCodeResource($voterCode))->message('Kode valid');
     }
 
     public function vote(VoteRequest $request)
@@ -48,6 +48,6 @@ class VoteController extends Controller
         $voterCode->already_vote = true;
         $voterCode->save();
 
-        return new VoterCodeResource($voterCode->load('votes'))->message('Berhasil melakukan voting');
+        return (new VoterCodeResource($voterCode->load('votes')))->message('Berhasil melakukan voting');
     }
 }

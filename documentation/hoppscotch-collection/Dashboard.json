@@ -1,0 +1,30 @@
+{
+  "v": 12,
+  "id": "dashboard-collection",
+  "name": "Dashboard",
+  "folders": [],
+  "requests": [
+    {
+      "v": "17",
+      "id": "dashboard-index",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "body": null,
+        "contentType": null
+      },
+      "name": "Get Dashboard",
+      "method": "GET",
+      "params": [],
+      "headers": [],
+      "endpoint": "<<link>><<prefix>>/dashboard",
+      "responses": {},
+      "testScript": "const res = pw.response.body;\r\n\r\n// Verify response structure\r\nconsole.log(\"Status:\", res.status);\r\nconsole.log(\"Message:\", res.message);\r\nconsole.log(\"Total A:\", res.data.total_A);\r\nconsole.log(\"Total B:\", res.data.total_B);\r\nconsole.log(\"Total C:\", res.data.total_C);\r\nconsole.log(\"Total D:\", res.data.total_D);\r\nconsole.log(\"Total E:\", res.data.total_E);",
+      "description": "Get dashboard data with vote counts for options A, B, C, D, and E. Requires authentication.",
+      "preRequestScript": "",
+      "requestVariables": []
+    }
+  ]
+}

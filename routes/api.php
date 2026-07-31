@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoteController;
@@ -57,4 +58,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('profile')->controller(ProfileController::class)->group(function () {
         Route::get('/me', 'me');
     });
+
+    /**
+     * Dashboard routes
+     * Get /api/dashboard -> get dashboard data
+     */
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 });

@@ -22,7 +22,9 @@ class TokenCheckRequest extends FormRequest
      */
     protected function prepareForValidation(): void
     {
-        //
+        $this->merge([
+            'code' => strtoupper($this->input('code')),
+        ]);
     }
 
     /**
