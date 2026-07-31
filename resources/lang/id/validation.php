@@ -53,6 +53,7 @@ return [
 
     'attributes' => [
         'activated_at' => 'tanggal aktivasi',
+        'code' => 'kode',
         'email' => 'email',
         'id_token' => 'ID token',
         'nama' => 'nama',
@@ -61,5 +62,7 @@ return [
         'password' => 'password',
         'search' => 'pencarian',
         'status' => 'status',
+        'vote_choice' => 'pilihan suara',
+        'voter_code' => 'kode pemilih',
     ],
 ];

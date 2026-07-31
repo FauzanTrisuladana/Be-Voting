@@ -25,7 +25,7 @@ class UserActivatedNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Akun Anda Telah Diaktifkan - Akuntansi Pemuda',
+            subject: 'Akun Anda Telah Diaktifkan - Aplikasi E-Voting',
         );
     }
 

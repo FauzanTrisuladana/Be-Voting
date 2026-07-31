@@ -19,7 +19,7 @@ Route::get('/status', function () {
  * Post /api/vote/token -> check token validity
  */
 Route::prefix('vote')->controller(VoteController::class)->group(function () {
-    Route::post('/token', 'token');
+    Route::get('/token', 'token');
     Route::post('/', 'vote');
 });
 

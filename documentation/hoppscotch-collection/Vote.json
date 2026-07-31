@@ -16,7 +16,7 @@
         "contentType": "application/json"
       },
       "name": "Check Token",
-      "method": "POST",
+      "method": "GET",
       "params": [],
       "headers": [],
       "endpoint": "<<link>><<prefix>>/token",

@@ -27,7 +27,7 @@ class NewUserNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'User Baru Terdaftar - Akuntansi Pemuda',
+            subject: 'User Baru Terdaftar - Aplikasi E-Voting',
         );
     }
 
