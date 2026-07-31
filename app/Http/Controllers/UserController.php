@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\User\IndexUserRequest;
 use App\Http\Requests\User\StoreUserRequest;
-use App\Http\Requests\User\UpdateUserRequest;
 use App\Http\Resources\ApiResource;
 use App\Http\Resources\ApiResourceCollection;
 use App\Http\Resources\UserResource;

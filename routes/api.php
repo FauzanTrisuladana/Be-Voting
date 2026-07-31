@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -37,4 +38,18 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/user/{id}/toggle-status', [UserController::class, 'toggleStatus']);
     Route::apiResource('user', UserController::class)
         ->except(['show', 'update']);
+
+    /**
+     * Profile routes
+     * Get /api/profile/me -> get profile user yang sedang login
+     * Put /api/profile/update -> update profile user yang sedang login
+     * Put /api/profile/update-password -> update password user yang sedang login
+     */
+    Route::prefix('profile')->controller(ProfileController::class)->group(function () {
+        Route::get('/me', 'me');
+        Route::put('/update', 'update');
+        Route::put('/update-password', 'updatePassword');
+        Route::post('/update-photo', 'updatePhoto');
+        Route::delete('/delete', 'delete');
+    });
 });
