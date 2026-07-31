@@ -19,7 +19,29 @@
       "method": "POST",
       "params": [],
       "headers": [],
-      "endpoint": "<<link>><<prefix>>/vote/token",
+      "endpoint": "<<link>><<prefix>>/token",
+      "responses": {},
+      "testScript": "",
+      "description": null,
+      "preRequestScript": "",
+      "requestVariables": []
+    },
+    {
+      "v": "17",
+      "id": "cmovi385i3is0h01lte3y0jee2",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "body": "{\n  \"voter_code\": \"8K3P\",\n  \"vote_choice\": \"A\"\n}",
+        "contentType": "application/json"
+      },
+      "name": "Vote",
+      "method": "POST",
+      "params": [],
+      "headers": [],
+      "endpoint": "<<link>><<prefix>>/",
       "responses": {},
       "testScript": "",
       "description": null,

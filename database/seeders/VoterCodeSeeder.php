@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\VoterCode;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\VoterCode;
 
 class VoterCodeSeeder extends Seeder
 {

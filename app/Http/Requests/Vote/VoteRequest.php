@@ -5,7 +5,7 @@ namespace App\Http\Requests\Vote;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
-class TokenCheckRequest extends FormRequest
+class VoteRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -33,10 +33,15 @@ class TokenCheckRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'code' => [
+            'voter_code' => [
                 'required',
                 'string',
                 'exists:voter_codes,code',
+            ],
+            'vote_choice' => [
+                'required',
+                'string',
+                'in:A,B,C,D,E',
             ],
         ];
     }

@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "message": "Berhasil melakukan voting",
+  "data": {
+    "code": "M7W9",
+    "already_vote": true,
+    "vote": {
+      "id": 2
+    }
+  }
+}

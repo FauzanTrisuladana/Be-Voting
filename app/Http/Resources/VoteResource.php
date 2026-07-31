@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 
-class VoterCodeResource extends ApiResource
+class VoteResource extends ApiResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,7 @@ class VoterCodeResource extends ApiResource
     public function toArray(Request $request): array
     {
         return [
-            'code' => $this->code,
-            'already_vote' => $this->already_vote,
-            'vote' => $this->whenLoaded('votes', function () {
-                return new VoteResource($this->votes);
-            }),
+            'id' => $this->whenHas('id'),
         ];
     }
 }
