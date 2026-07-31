@@ -1,0 +1,29 @@
+services:
+    laravel:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        container_name: voting
+        ports:
+            - 8005:80
+        env_file:
+            - ./.env
+        volumes:
+            - local_data:/app/storage/app/public
+        networks:
+            - shared-net
+        restart: always
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost/api/status"]
+            interval: 30s
+            timeout: 10s
+            retries: 3
+
+networks:
+  shared-net:
+    external: true
+
+volumes:
+  local_data:
+
+
