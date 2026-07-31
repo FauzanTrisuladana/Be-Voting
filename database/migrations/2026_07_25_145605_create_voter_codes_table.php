@@ -10,7 +10,7 @@ class CreateVoterCodesTable extends Migration
     {
         Schema::create('voter_codes', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('code')->unique()->index();
             $table->boolean('already_vote')->default(false);
             $table->timestamps();
         });

@@ -2,6 +2,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VoteController;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -10,6 +11,14 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/status', function () {
     return response()->json(['status' => 'ok']);
+});
+
+/**
+ * Vote routes.
+ * Post /api/vote/token -> check token validity
+ */
+Route::prefix('vote')->controller(VoteController::class)->group(function () {
+    Route::post('/token', 'token');
 });
 
 /**
@@ -42,14 +51,8 @@ Route::middleware('auth:sanctum')->group(function () {
     /**
      * Profile routes
      * Get /api/profile/me -> get profile user yang sedang login
-     * Put /api/profile/update -> update profile user yang sedang login
-     * Put /api/profile/update-password -> update password user yang sedang login
      */
     Route::prefix('profile')->controller(ProfileController::class)->group(function () {
         Route::get('/me', 'me');
-        Route::put('/update', 'update');
-        Route::put('/update-password', 'updatePassword');
-        Route::post('/update-photo', 'updatePhoto');
-        Route::delete('/delete', 'delete');
     });
 });

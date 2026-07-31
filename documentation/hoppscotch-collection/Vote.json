@@ -1,0 +1,30 @@
+{
+  "v": 12,
+  "id": "cmovi384w3iryh01lmgqrnap4",
+  "name": "Vote",
+  "folders": [],
+  "requests": [
+    {
+      "v": "17",
+      "id": "cmovi385i3is0h01lte3y0jee",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "body": "{\n  \"code\": \"8K3P\"\n}",
+        "contentType": "application/json"
+      },
+      "name": "Check Token",
+      "method": "POST",
+      "params": [],
+      "headers": [],
+      "endpoint": "<<link>><<prefix>>/vote/token",
+      "responses": {},
+      "testScript": "",
+      "description": null,
+      "preRequestScript": "",
+      "requestVariables": []
+    }
+  ]
+}
